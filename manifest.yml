@@ -1,0 +1,9 @@
+applications:
+- buildpack: sdk-for-nodejs
+  command: npm start
+  instances: 1
+  memory: 256M
+  name: hackathon
+  routes:
+  - route: hackathon.eu-gb.cf.appdomain.cloud
+  timeout: 180
