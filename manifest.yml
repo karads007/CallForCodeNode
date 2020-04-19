@@ -3,7 +3,7 @@ applications:
   command: npm start
   instances: 1
   memory: 256M
-  name: hackathon
+  name: dsafe
   routes:
-  - route: hackathon.eu-gb.cf.appdomain.cloud
+  - route: dsafe.eu-gb.cf.appdomain.cloud
   timeout: 180
