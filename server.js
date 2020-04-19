@@ -3,6 +3,7 @@ var express = require('express'),
   port = process.env.PORT || 8081,
   mongoose = require('mongoose'),
   Event = require('./models/events.model'),
+  Interaction = require('./models/interactions.model'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var routes = require('./routes/events.routes');
+var routes = require('./routes/interactions.routes');
 routes(app);
 
 app.use(function(req, res) {
