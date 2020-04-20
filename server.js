@@ -18,7 +18,7 @@ var routes = require('./routes/events.routes');
 var routes = require('./routes/interactions.routes');
 routes(app);
 
-app.use(cors({ origin: "https://dsafeui.eu-gb.mybluemix.net/" }));
+app.use(cors({ origin: "https://dsafeui.eu-gb.mybluemix.net" }));
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
