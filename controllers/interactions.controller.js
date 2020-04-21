@@ -6,7 +6,7 @@ Interaction = mongoose.model('Interactions');
 exports.get = function(req, res) {
   res.header("Access-Control-Allow-Origin", "*"); 
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    Interaction.find({}, function(err, interaction) {
+    Interaction.find({}, null, { sort: '-createdAt' }, function(err, interaction) {
     if (err)
       res.send(err);
     res.json(interaction);
