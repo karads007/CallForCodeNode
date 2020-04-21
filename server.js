@@ -6,16 +6,17 @@ var express = require('express'),
   Interaction = require('./models/interactions.model'),
   bodyParser = require('body-parser');
 
-const cors = require("cors");
-  
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://test:test@cluster0-58sap.azure.mongodb.net/test?retryWrites=true&w=majority');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors({ 
-  origin: ["https://dsafeui.eu-gb.mybluemix.net", "http://localhost:4200" ]
-}));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 var routes = require('./routes/events.routes');
 var routes = require('./routes/interactions.routes');
