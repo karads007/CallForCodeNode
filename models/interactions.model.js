@@ -16,6 +16,7 @@ var InteractionSchema = new Schema({
     type: String,
     Required: 'Enter event Id'
   }
-});
+},
+{ timestamps: true });
 
 module.exports = mongoose.model('Interactions', InteractionSchema);
